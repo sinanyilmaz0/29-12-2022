@@ -1,0 +1,31 @@
+<!-- Eğer popup servicedeki modelde isOpen=true ise wrapper classini ekle -->
+<!-- <etiya-pop-up></etiya-pop-up>
+    <etiya-button [buttonText]="'Login'"></etiya-button>
+
+    <etiya-button
+      [icon]="'fa-solid fa-user-plus'"
+      [buttonColor]="'bg-blue'"
+      [buttonText]="'Logout'"
+    ></etiya-button>
+
+    <etiya-button [buttonColor]="'bg-gray'" [buttonText]="'click'"></etiya-button>
+
+    <etiya-input [requiredField]="true" [inputLabel]="'Search'"></etiya-input>
+
+    <etiya-input [inputLabel]="'Search'" [inputType]="'number'" ></etiya-input>
+
+    <button class="btn btn-primary" (click)="runPopUp()"> {{ 'search_customer' | translate }} </button>
+
+    <button class="btn btn-primary" (click)="changeLanguage('tr')">TR</button>
+    <button class="btn btn-primary" (click)="changeLanguage('en')" >EN</button>
+
+  </div> -->
+
+<div>
+  <div class="overlay" *ngIf="show && showOverlay"></div>
+  <etiya-pop-up></etiya-pop-up>
+
+  <div [class.wrapper]="show && showOverlay">
+    <router-outlet></router-outlet>
+  </div>
+</div>
