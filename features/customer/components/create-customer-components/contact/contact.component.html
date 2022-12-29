@@ -1,0 +1,78 @@
+<app-main-layout>
+    <etiya-background-template [width]="'80rem'" [height]="'53.1rem'">
+      <form [formGroup]="contactMediumForm" (submit)="contactMediumSubmit()">
+        <div class="container">
+          <div class="row">
+            <h1 class="container_title">Contact Medium</h1>
+          </div>
+        </div>
+        <div class="row">
+          <!-- emailValidationPosition -->
+          <div class="col-5 input emailValidationPosition "
+          >
+          <!-- [ngClass]="{ 'is-invalid': submitted && f['email'].errors }" -->
+          <etiya-input
+              [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"
+              [inputLabel]="'E-Mail'"
+              [inputType]="'text'"
+              [requiredField]="true"
+              formControlName="email"
+              [form]="contactMediumForm"
+              [name]="'email'"
+            >
+            </etiya-input>
+            <div *ngIf="submitted && f['email'].errors" class="invalid-feedback requiredFieldForEmail">
+              <div *ngIf="f['email'].errors['email']">Email must be a valid email address</div>
+          </div>
+
+
+
+
+          </div>
+
+          <div class="col-5">
+            <etiya-input
+              [inputLabel]="'Home Phone'"
+              [inputType]="'text'"
+              formControlName="homePhone"
+            ></etiya-input>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-5 input">
+            <etiya-input
+              [inputLabel]="'Mobile Number'"
+              [requiredField]="true"
+              formControlName="mobilePhone"
+            >
+            </etiya-input>
+          </div>
+          <div class="col-5">
+            <etiya-input [inputLabel]="'Fax'" formControlName="fax">
+            </etiya-input>
+          </div>
+        </div>
+        <div class="row d-flex justify-content-between">
+          <div class="col-2 etiya-button-left">
+            <etiya-button
+              [routerLink]="'/customer/create_customer/address_info/details'"
+              [buttonColor]="'bg-gray'"
+              [buttonText]="'Cancel'"
+            ></etiya-button>
+          </div>
+          <div class="col-2 etiya-button-right">
+            <etiya-button
+              [buttonType]="'submit'"
+              [buttonColor]="'bg-orange'"
+              [buttonText]="'Create'"
+            ></etiya-button>
+          </div>
+        </div>
+      </form>
+    </etiya-background-template>
+</app-main-layout>
+
+
+
+
+

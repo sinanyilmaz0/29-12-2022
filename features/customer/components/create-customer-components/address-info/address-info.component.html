@@ -1,0 +1,47 @@
+<app-main-layout>
+
+  <etiya-background-template [width]="'80rem'" [height]="'53.1rem'"
+  >
+    <div class="container">
+      <div class="row ">
+        <h1  [ngStyle]="{'margin':'15px 0 15px 90px','padding':'0 0px 10px 0','border-bottom':'1px solid rgba(0, 0, 0, 0.15)','width':'80%'}">Address Info</h1>
+      </div>
+      <etiya-background-template
+        [width]="'27.8rem'"
+        [height]="'33.7rem'"
+        [margin]="'20px 0 0 90px'"
+      >
+        <div class="d-flex justify-content-center">
+          <etiya-button
+            [routerLink]="'/customer/create_customer/address_info/details'"
+            [ngStyle]="{ 'margin-top': '168.5px' }"
+            [buttonType]="'button'"
+            [icon]="'fa-solid fa-plus'"
+            [buttonColor]="'bg-orange'"
+            [buttonText]="'Add New Address'"
+          ></etiya-button>
+        </div>
+      </etiya-background-template>
+
+      <div class="row d-flex justify-content-between">
+        <div class="col-2 etiya-button-left">
+          <etiya-button
+            [routerLink]="'/customer/create_customer/demographic_info'"
+            [buttonColor]="'bg-gray'"
+            [buttonText]="'Cancel'"
+          ></etiya-button>
+        </div>
+        <div class="col-2 etiya-button-right">
+          <etiya-button
+            [buttonType]="'submit'"
+            [icon]="'fa-solid fa-chevron-right'"
+            [buttonColor]="'bg-orange'"
+            [buttonText]="'Next'"
+          ></etiya-button>
+        </div>
+      </div>
+    </div>
+
+  </etiya-background-template>
+
+</app-main-layout>

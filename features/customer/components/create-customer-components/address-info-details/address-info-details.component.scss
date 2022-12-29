@@ -1,0 +1,46 @@
+
+.etiya-button-left {
+  margin-left: 90px;
+  margin-top: 20px;
+}
+.etiya-button-right {
+  margin-right: 90px;
+  margin-top: 20px;
+
+}
+
+.container_title{
+  width: 80%;
+  padding: 0 0px 10px 0;
+  border-bottom:1px solid rgba(0, 0, 0, 0.15);
+  margin:15px 0 15px 90px
+}
+
+.input{
+  margin-left: 60px;
+}
+:host ::ng-deep .p-dropdown {
+  position: relative;
+  width: 85%;
+  border-radius: 30px;
+  padding: 9px 15px;
+  margin: 25px 20px;
+  border: 0.5px solid #828282;
+
+}
+:host ::ng-deep .p-dropdown:hover {
+  border-color: #828282;
+}
+
+label {
+  position: absolute;
+  top: 197px;
+  left: 680px;
+  background-color: white;
+  padding: 0 5px;
+  font-size: 1.6rem;
+  color: #999;
+  z-index: 4;
+}
+
+

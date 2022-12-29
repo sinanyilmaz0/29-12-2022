@@ -1,0 +1,116 @@
+<app-main-layout>
+    <etiya-background-template [width]="'80rem'" [height]="'53.1rem'">
+      <form [formGroup]="addressInfoForm" (submit)="onAddressInfoSubmit()">
+        <div class="container">
+          <div class="row">
+            <h1 class="container_title">Address Info</h1>
+          </div>
+
+          <div class="row">
+            <div class="col-5 input">
+              <!-- <etiya-input
+              [inputLabel]="'City'"
+              [inputType]="'text'"
+              [requiredField]="true"
+              formControlName="city"
+              >
+              </etiya-input> -->
+              <etiya-input
+              [requiredField]="true"
+              [inputLabel]="'Address Title'"
+              [inputType]="'text'"
+              formControlName="addressTitle"
+              [form]="addressInfoForm"
+              [name]="'addressTitle'"
+              >
+             </etiya-input>
+             </div>
+
+            <div class="col-5">
+            <label class="input">City<span class="text-orange"> * </span></label>
+            <p-dropdown
+              [options]="cities"
+              [(ngModel)]="selectedCity"
+              formControlName="city"
+              optionLabel="name"
+              [filter]="true"
+              filterBy="name"
+              [showClear]="true"
+              placeholder="Select a City"
+            >
+              <ng-template pTemplate="selectedCity">
+                <div class="city-item city-item-value" *ngIf="selectedCity">
+                  <div>{{ selectedCity.name }}</div>
+                </div>
+              </ng-template>
+              <ng-template let-city pTemplate="item">
+                <div class="city-item">
+                  <div>{{ city.name }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+            </div>
+          </div>
+
+
+            <!-- <div class="col-5 "> -->
+              <!-- <etiya-input
+              [inputLabel]="'Town'"
+              [inputType]="'text'"
+              [requiredField]="true"
+              formControlName="town"
+              >
+              </etiya-input> -->
+          <!-- </div> -->
+          <div class="row">
+            <div class="col-5 input">
+              <etiya-input
+              [inputLabel]="'Street'"
+              [inputType]="'text'"
+              [requiredField]="true"
+              formControlName="street"
+              >
+              </etiya-input>
+            </div>
+            <div class="col-5 ">
+              <etiya-input
+              [inputLabel]="'House/Flat No'"
+              [inputType]="'text'"
+              [requiredField]="true"
+              formControlName="flatNo"
+              >
+              </etiya-input>
+            </div>
+          </div>
+
+          <div class="row ">
+            <div class="col-10 input">
+              <etiya-text-area
+              [inputLabel]="'Address Description'"
+              formControlName="addressDescription"
+              >
+              </etiya-text-area>
+            </div>
+          </div>
+        <div class="row d-flex justify-content-between">
+          <div class="col-2 etiya-button-left">
+            <etiya-button
+              [routerLink]="'/customer/create_customer/address_info/list'"
+              [buttonColor]="'bg-gray'"
+              [buttonText]="'Cancel'"
+            ></etiya-button>
+          </div>
+          <div class="col-2 etiya-button-right">
+            <etiya-button
+              [buttonType]="'submit'"
+              [buttonColor]="'bg-orange'"
+              [buttonText]="'Save'"
+            ></etiya-button>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    </etiya-background-template>
+</app-main-layout>
+
