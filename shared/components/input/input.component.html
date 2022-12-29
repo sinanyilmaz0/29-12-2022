@@ -1,0 +1,41 @@
+<div class="form">
+  <div class="input-cont">
+    <label [class]="'input label-' + className"
+      >{{ inputLabel }} <span *ngIf="requiredField">*</span></label
+    >
+
+
+    <input
+      [ngClass]="className"
+      [disabled]="setDisabled"
+      [type]="inputType"
+      [(ngModel)]="value"
+      (ngModelChange)="onChange($event)"
+      (keypress)="onTouched()"
+      [name]="name"
+    />
+    <div class="input-content">
+      <div class="input-group-addon"><i
+        [ngClass]="icon1"
+        aria-hidden="false"
+        *ngIf="!passwordShow"
+        (click)="passwordToggleEvent()">
+        </i>
+      <i
+        [ngClass]="icon2"
+        aria-hidden="false"
+        *ngIf="passwordShow"
+        (click)="passwordToggleEvent()"
+      ></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
